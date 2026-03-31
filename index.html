@@ -50,10 +50,14 @@ img{display:block;max-width:100%}
 /* ── NAV ── */
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:500;background:rgba(5,7,15,.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.09);border-radius:20px;transition:box-shadow .3s,background .3s;width:min(1140px,92vw)}
 nav.scrolled{background:rgba(5,7,15,.92);box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.07)}
+
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:500;background:rgba(5,7,15,.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.09);border-radius:20px;transition:box-shadow .3s,background .3s;width:min(1140px,92vw)}
+nav.scrolled{background:rgba(5,7,15,.92);box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.07)}
 .nav-inner{width:100%;padding:0 18px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 
 .brand{display:flex;align-items:center;gap:10px}
-.brand-logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--neon));display:grid;place-items:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:.85rem;color:#fff;box-shadow:0 6px 20px var(--blue-glow);flex-shrink:0}
+
+.brand-logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:.85rem;color:#fff;box-shadow:0 6px 20px var(--blue-glow);flex-shrink:0}
 .brand-text strong{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.05rem;display:block;letter-spacing:.2px}
 .brand-text span{font-size:.68rem;color:var(--muted);letter-spacing:.3px}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
@@ -255,6 +259,10 @@ nav.scrolled{background:rgba(5,7,15,.92);box-shadow:0 8px 48px rgba(0,0,0,.5),0 
   padding:160px 0 60px;
   max-width:820px;
 }
+.hero-inner-comp{
+  padding:0px 0 36px;
+  max-width:820px;
+}
 .hero-inner .badge{margin-bottom:24px}
 .hero-inner h1{
   font-family:'Cabinet Grotesk',sans-serif;font-weight:800;
@@ -375,6 +383,10 @@ nav.scrolled{background:rgba(5,7,15,.92);box-shadow:0 8px 48px rgba(0,0,0,.5),0 
 /* ═══════════════════════════
    COMPANY PAGE
 ═══════════════════════════ */
+.hero-comp{
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
 .company-hero{padding:80px 0 60px;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(29,111,255,.09),transparent 55%);border-bottom:1px solid var(--line)}
 .company-hero h1{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4.2rem);letter-spacing:-2.5px;line-height:1;margin:14px 0 18px;max-width:760px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -1524,14 +1536,13 @@ body::before {
 
 <!-- NAV -->
 <nav id="navbar">
-  <div class="nav-inner">
+ <div class="nav-inner">
     <a class="brand" href="#" onclick="showPage('home')">
-      <div class="brand-logo">IT</div>
-      <div class="brand-text">
-        <strong>ITRAIT</strong>
-        <span>Technology · Innovation · Impact</span>
-      </div>
+      <div class="brand-logo">
+<img src="https://raw.githubusercontent.com/Diva303/itrait/refs/heads/main/itrait_logo.svg" alt="ITRAIT" style="width:120px;height:120px;">
+</div>
     </a>
+  
     <ul class="nav-links" id="navLinks">
       <li><a href="#" onclick="showPage('home')" data-page="home" class="active">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
@@ -1880,13 +1891,48 @@ body::before {
 ════════════════════════════════════ -->
 <div class="page" id="page-company">
 
+
+<!--Hero -fullscreen background-->
+<header class="hero-comp">
+<!--background image-->
+	<div class="hero-bg">
+		<img src="https://www.agoda.com/wp-content/uploads/2024/07/dubai-night-featured-1244x700.jpg" alt="jtech">
+		<div class="hero-bg-grad"></div>
+	</div>
+
   <!-- ── HERO ── -->
-  <section class="company-hero" style="padding-top:100px">
+  <section class="company-hero" style="padding:48px 0 40px">
     <div class="container">
-      <h1 class="reveal" style="max-width:820px">One company.<br><span style="background:linear-gradient(135deg,#9bbeff,var(--neon),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent">Multiple powers.</span></h1>
-      <p class="reveal reveal-d1" style="color:var(--muted);font-size:1.2rem;line-height:1.85;max-width:600px;margin-top:16px">ITRAIT is a forward-thinking technology and innovation company operating at the intersection of technology, strategy, and education. Founded in 2023, we empower businesses and institutions internationally through tailored solutions that create real, measurable impact.</p>
+<div class="hero-inner-comp">
+      <h1 class="reveal">One company.<br><span style="background:linear-gradient(135deg,#9bbeff,var(--neon),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:clamp(4rem,7vw,5rem);">Multiple powers.</span></h1>
+      <p class="reveal reveal-d1" style="color:var(--muted);font-size:1.2rem;line-height:1.85;margin-top:16px">ITRAIT is a forward-thinking technology and innovation company operating at the intersection of technology, strategy, and education. Founded in 2023, we empower businesses and institutions internationally through tailored solutions that create real, measurable impact.</p>
     </div>
+</div>
+
   </section>
+</header>
+
+
+ <!-- Stats row beneath -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);border-radius:16px;overflow:hidden;margin-bottom:0" class="reveal">
+        <div style="background:var(--bg);padding:22px;text-align:center;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;background:linear-gradient(135deg,var(--blue),var(--neon));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px">25+</div>
+          <div style="color:var(--muted);font-size:.76rem">Partner institutions</div>
+        </div>
+        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--green);margin-bottom:4px">4</div>
+          <div style="color:var(--muted);font-size:.76rem">Core divisions</div>
+        </div>
+        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--purple2);margin-bottom:4px">200+</div>
+          <div style="color:var(--muted);font-size:.76rem">Tech courses</div>
+        </div>
+        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--orange);margin-bottom:4px">20+</div>
+          <div style="color:var(--muted);font-size:.76rem">Years experience</div>
+        </div>
+      </div>
+
 
   <!-- ── EDITORIAL SPLIT SECTION ── -->
   <section style="padding:56px 0 0">
@@ -1945,26 +1991,6 @@ body::before {
           </div>
         </div>
 
-      </div>
-
-      <!-- Stats row beneath -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);border-radius:16px;overflow:hidden;margin-bottom:0" class="reveal">
-        <div style="background:var(--bg);padding:22px;text-align:center;transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;background:linear-gradient(135deg,var(--blue),var(--neon));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:4px">25+</div>
-          <div style="color:var(--muted);font-size:.76rem">Partner institutions</div>
-        </div>
-        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--green);margin-bottom:4px">4</div>
-          <div style="color:var(--muted);font-size:.76rem">Core divisions</div>
-        </div>
-        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--purple2);margin-bottom:4px">200+</div>
-          <div style="color:var(--muted);font-size:.76rem">Tech courses</div>
-        </div>
-        <div style="background:var(--bg);padding:22px;text-align:center;border-left:1px solid rgba(255,255,255,.05);transition:.2s" onmouseover="this.style.background='rgba(255,255,255,.03)'" onmouseout="this.style.background='var(--bg)'">
-          <div style="font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.8rem;color:var(--orange);margin-bottom:4px">20+</div>
-          <div style="color:var(--muted);font-size:.76rem">Years experience</div>
-        </div>
       </div>
 
     </div>
@@ -3556,20 +3582,23 @@ body::before {
     <div class="container">
       <div class="footer-grid">
 
-        <!-- Brand col -->
+<!-- Brand col -->
         <div>
           <div class="footer-brand">
-            <div class="brand-logo" style="width:34px;height:34px;font-size:.82rem">IT</div>
-            <div class="brand-text"><strong>ITRAIT</strong><span>Technology · Innovation · Impact</span></div>
+            <div class="brand-logo" style="width:34px;height:34px;font-size:.82rem">LOGO ITRAIT</div>
+            
           </div>
           <p class="footer-desc">ITRAIT is a technology and innovation company delivering AI solutions, digital platforms, and emerging technology education through its division J-Tech Academy, empowering organizations and future innovators to thrive in a rapidly evolving world.</p>
+      
           <!-- ITRAIT socials -->
           <p style="color:var(--muted2);font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px">ITRAIT</p>
+
           <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px">
             <a href="https://www.instagram.com/itraitoffcial?igsh=aDd5cnhsYmVsZm5y&utm_source=qr" target="_blank" class="footer-social" title="ITRAIT Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.linkedin.com/company/itrait/" target="_blank" class="footer-social" title="ITRAIT LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
             <a href="https://www.facebook.com/share/1EFZ3EXW4S/?mibextid=wwXIfr" target="_blank" class="footer-social" title="ITRAIT Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
           </div>
+
           <!-- J-Tech socials -->
           <p style="color:var(--muted2);font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px">J-Tech Academy</p>
           <div style="display:flex;gap:7px;flex-wrap:wrap">
